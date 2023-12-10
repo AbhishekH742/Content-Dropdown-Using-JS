@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   background:url(cropped-question-mark-blue-scaled-1.jpg) no-repeat center center/ cover
+   ;
+   height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion{
+    width: 70vw;
+    background-color: #ffffff45;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px;
+    backdrop-filter: blur(10px);
+
+}
+
+.heading{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.accordion .content-container .question{
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    /* margin: 10px; */
+    cursor: pointer;
+
+    position: relative;
+
+}
+
+.accordion .content-container .question::after{
+    content: '+';
+    position: absolute;
+    right: 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.accordion .content-container .answer{
+    height: 0;
+   overflow: hidden;
+   line-height: 1.5;
+   font-size: 1.2rem;
+}
+
+/* JavaScript link css */
+
+.accordion .content-container.active .question{
+    font-size: 15px;
+    transition: cubic-bezier(1, 0.24, 1, 1);
+}
+
+.accordion .content-container.active .answer{
+    height: 50px;
+    padding: 20px;
+}
+
+.accordion .content-container.active .question::after{
+    content: '-';
+    font-size: 30px;
+    transition: cubic-bezier(1, 0.24, 1, 1);
+}
+
+
